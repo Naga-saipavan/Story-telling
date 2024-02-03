@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Telling</title>
+    <style>
+        img {
+            max-width: 600px;
+            height: 400px;
+            width: 500px;
+            margin-bottom: 10px;
+        }
+        audio {
+            margin: 2%;
+            min-width: 20%;
+        } 
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 2%;
+            max-width: 100px;
+        }
+        button:hover {
+            background-color: darkslateblue;
+        }
+        img.hover{
+            background-color: aqua;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            /*text-align: center;*/
+            margin: 20px;
+            background-color: lightcyan;
+            padding: 10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 5px;
+        }
+        p {
+            font-size: 20px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    let userName;
+
+    function startStory() {
+        const inputElement = document.createElement('input');
+        inputElement.placeholder = 'Type your name...';
+
+        const startButton = document.createElement('button');
+        startButton.innerText = 'Start Story';
+        startButton.onclick = function () {
+            userName = inputElement.value.trim();
+            if (userName === '') {
+                alert('Please enter your name.');
+            } else {
+                scene1();
+            }
+        };
+
+        document.body.appendChild(inputElement);
+        document.body.appendChild(startButton);
+    }
+
+    function scene1() {
+        clearPage();
+
+        const welcomeMessage = document.createElement('p');
+        welcomeMessage.innerHTML = `Welcome, ${userName} !!!.\n Once upon a time, in a dense and mysterious forest named tooti-frooti, there lived a young man named prince. Prince was known for his courage and love for exploring the unknown. One sunny morning, he decided to start on a journey through tooti-frooti, unaware that his day would soon take a thrilling turn.`;
+        //welcomeMessage.innerHTML = "Once upon a time, in a dense and mysterious forest named tooti-frooti, there lived a young man named prince. Prince was known for his courage and love for exploring the unknown. One sunny morning, he decided to start on a journey through tooti-frooti, unaware that his day would soon take a thrilling turn.";
+
+        const forestImage = document.createElement('img');
+        forestImage.src = 'https://media.istockphoto.com/id/614122930/photo/spooky-foggy-forest.jpg?s=612x612&w=0&k=20&c=jBKT8Ku8a5VGMclYsX3LttZUpsbVdfO-XSeYQEQIqUs=';
+        forestImage.alt = 'Mysterious Forest';
+
+        const firstSceneAudio = document.createElement('audio');
+        //firstSceneAudio.src = 'story audio files/scene1.mp3';
+        firstSceneAudio.src = 'story assignment audio files/scene1.mp3';
+        firstSceneAudio.alt = 'first scene audio';
+        firstSceneAudio.controls = false;
+        firstSceneAudio.autoplay = true;
+        firstSceneAudio.loop = true;
+
+        const continueButton = createContinueButton(scene2);
+
+        document.body.appendChild(forestImage);
+        document.body.appendChild(welcomeMessage);
+        document.body.appendChild(firstSceneAudio);
+        document.body.appendChild(continueButton);
+    }   
+
+    function scene2() {
+        clearPage();
+
+        const sceneMessage2 = document.createElement('p'); 
+        //sceneMessage2.innerHTML = "As you walk through the forest, you notice that everything is dark ";
+        sceneMessage2.innerHTML = "As prince moved further, the forest began to transform. The trees grew more taller, and the path he had been following became less distinct. Unless, he continued, fueled by his adventurous spirit. However, his carefree exploration took a sudden turn when he stumbled upon a clearing, and in the center of it stood a majestic gray wolf.";
+
+        const secondSceneImage = document.createElement('img');
+        secondSceneImage.src = 'https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL3BsYXlcL2U2MjVlYjlkLWM0MzMtNGI2NC05ZDUxLWIxMjU3Y2ZmMTIzNi0xMjEwLTY4MC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjgyOH19fQ==';
+        secondSceneImage.alt = '2nd scene image';
+
+        const secondSceneAudio = document.createElement('audio');
+        //secondSceneAudio.src = 'story audio files/scene2.mp3';
+        secondSceneAudio.src = 'story assignment audio files/scene2.mp3';
+        secondSceneAudio.autoplay = true;
+        secondSceneAudio.controls = false;
+        secondSceneAudio.loop = true;
+
+        const continueToSceneThree = createContinueButton(scene3);
+
+        document.body.appendChild(secondSceneImage);
+        document.body.appendChild(sceneMessage2);
+        document.body.appendChild(secondSceneAudio);
+        document.body.appendChild(continueToSceneThree);
+    }
+    function scene3() {
+        clearPage();
+
+        const sceneMessage3 = document.createElement('p'); 
+        //sceneMessage3.innerHTML = "You listen a crying wolf sound from far.";
+        sceneMessage3.innerHTML = "Without warning, the wolf turned and dashed away, disappearing into the shadows. prince gut feeling worked in, and he sensed that following the wolf might be his key to safety. Determined, he pursued the creature through the trees, his heart rhyming with every step.";
+
+        const thirdSceneImage = document.createElement('img');
+        thirdSceneImage.src = 'https://i.etsystatic.com/28251150/r/il/5e5e79/2971149631/il_600x600.2971149631_rkr8.jpg ';
+        thirdSceneImage.alt = '3rd scene image';
+
+        const thirdSceneAudio = document.createElement('audio');
+        //thirdSceneAudio.src = 'story audio files/scene3.mp3';
+        thirdSceneAudio.src = 'story assignment audio files/scene3.mp3';
+        thirdSceneAudio.autoplay = true;
+        thirdSceneAudio.controls = false;
+        thirdSceneAudio.loop = true;
+
+        const continueToSceneFour = createContinueButton(scene4);
+
+        document.body.appendChild(thirdSceneImage);
+        document.body.appendChild(sceneMessage3);
+        document.body.appendChild(thirdSceneAudio);
+        document.body.appendChild(continueToSceneFour);
+    }
+    function scene4() {
+        clearPage();
+
+        const sceneMessage4 = document.createElement('p'); 
+        //sceneMessage4.innerHTML = "Don't fear for the  wolf! It's just a friendly wolf who take back it's step if you step forward";
+        sceneMessage4.innerHTML = "The wolf appeared, leading him with a grace, weaving through the trees as if it knew the path to safety.The forest became denser, and the howls of the approaching pack echoed ominously. Prince could feel the tension rising, but he moved on, trusting the wolf as his guide. Finally, the trees began to thin, and the sounds of the pursuing pack faded away.";
+
+        const fourthSceneImage = document.createElement('img');
+        fourthSceneImage.src = 'https://t4.ftcdn.net/jpg/05/63/94/35/360_F_563943535_7gTpXh67iehkPGSmNnYGZw6ODFoTRvnb.jpg';
+        fourthSceneImage.alt = '4th scene image';
+
+        const fourthSceneAudio = document.createElement('audio');
+        //fourthSceneAudio.src = 'story audio files/scene4.mp3';
+        fourthSceneAudio.src = 'story assignment audio files/scene4.mp3';
+        fourthSceneAudio.autoplay = true;
+        fourthSceneAudio.controls = false;
+        fourthSceneAudio.loop = true;
+
+        const continueToSceneFive = createContinueButton(scene5);
+
+        document.body.appendChild(fourthSceneImage);
+        document.body.appendChild(sceneMessage4);
+        document.body.appendChild(fourthSceneAudio);
+        document.body.appendChild(continueToSceneFive);
+    }
+
+    function scene5() {
+        clearPage();
+
+        const sceneMessage5 = document.createElement('p'); 
+        //sceneMessage5.innerHTML = "Take the wolf with you and it will show the way out of the forest. This way you can be saved";
+        sceneMessage5.innerHTML = "Coming out from the dense forest, Prince found himself on the outskirts of tooti-frooti. The wolf paused, turning to give him a final gaze before disappearing back into the shadows of the forest. Thankful for the guidance, Prince took a deep breath, thankful for the unlikely alliance that had helped him navigate the treacherous depths of tooti-frooti.";
+
+        const fifthSceneImage = document.createElement('img');
+        fifthSceneImage.src = 'https://media.istockphoto.com/id/1363238913/photo/autumn-forest.jpg?s=612x612&w=0&k=20&c=vrdazs7FBUpRRGHU2j6JtNdJHf8vMLk7TSfZSmHRpus=';
+        fifthSceneImage.alt = '5th scene image';
+
+        const fifthSceneAudio = document.createElement('audio');
+        //fifthSceneAudio.src = 'story audio files/scene5.mp3';
+        fifthSceneAudio.src = 'story assignment audio files/scene5.mp3';
+        fifthSceneAudio.autoplay = true;
+        fifthSceneAudio.controls = false;
+        fifthSceneAudio.loop = true;
+
+
+        const continueToLastScene = createContinueButton(endOfStory);
+
+        document.body.appendChild(fifthSceneImage);
+        document.body.appendChild(sceneMessage5);
+        document.body.appendChild(fifthSceneAudio);
+        document.body.appendChild(continueToLastScene);
+    }
+
+    function endOfStory() {
+        clearPage();
+
+        const endMessage = document.createElement('p');
+        endMessage.innerText = 'Congratulations! You reached the end of the story.';
+
+        const lastImage = document.createElement('img');
+        lastImage.src = 'https://media.istockphoto.com/id/923752630/photo/man-trail-running-in-the-forest.jpg?s=612x612&w=0&k=20&c=sT9P8xrOuqcroXDjmC0NfKRqVIEMZDlqj-bA5ivAkxc=';
+        lastImage.alt = 'moral of the image';
+
+        const lastImageAudio = document.createElement('audio');
+        lastImageAudio.src = 'story assignment audio files/moral.mp3';
+        lastImageAudio.loop =  true;
+        lastImageAudio.autoplay = false;
+        lastImageAudio.controls = true;
+
+        const moralButton = document.createElement('button');
+        moralButton.innerText = 'Moral of the story';
+        moralButton.onclick = function () {
+            const moralMessage = document.createElement('p');
+            moralMessage.innerText = 'The moral of the story is: "Every journey begins with step and hope."';
+
+            const restartButton = createContinueButton(startStory);
+            
+            document.body.appendChild(lastImage);
+            document.body.appendChild(lastImageAudio);
+            document.body.appendChild(moralMessage);
+            document.body.appendChild(restartButton);
+        };
+
+        document.body.appendChild(endMessage);
+        document.body.appendChild(moralButton);
+    }
+
+    function createContinueButton(nextSceneFunction) {
+        const continueButton = document.createElement('button');
+        continueButton.innerText = 'Continue';
+        continueButton.onclick = nextSceneFunction;
+
+        return continueButton;
+    }
+
+    function clearPage() {
+        while (document.body.firstChild) {// Remove all child elements from the body
+            document.body.removeChild(document.body.firstChild);
+        }
+    }
+    window.onload = startStory;
+</script>
+
+</body>
+</html>
+
+
+<!--
+scene 1 -- Welcome, user !!! Don't worry You are in my game. This is a mysterious forest.
+scene 2 -- As you walk through the forest, you notice that everything is dark
+scene 3 -- You listen a crying wolf sound from far
+scene 4 --  Don't fear for the  wolf! It's just a friendly wolf who take back it's step if you step forward
+scene 5 -- Take the wolf with you and it will show the way out of the forest. This way you can be saved
+
+Once upon a time, in a dense and mysterious forest named tooti-frooti, there lived a young man named prince. Prince was known for his courage and love
+for exploring the unknown. One sunny morning, he decided to start on a journey through tooti-frooti, unaware that his day would soon take a thrilling turn.
+
+As prince wandered further, the forest began to transform. The trees grew more taller, and the path he had been following became less distinct. Unless, he continued, 
+fueled by his adventurous spirit. However, his carefree exploration took a sudden turn when he stumbled upon a clearing, and in the center of it stood a majestic 
+gray wolf.
+
+Without warning, the wolf turned and dashed away, disappearing into the shadows. prince gut feeling worked in, and he sensed that following the wolf might be his key 
+to safety. Determined, he pursued the creature through the trees, his heart rhyming with every step.
+
+The wolf appeared, leading him with a grace, weaving through the trees as if it knew the path to safety.The forest became denser, and the howls of the approaching 
+pack echoed ominously. Alex could feel the tension rising, but he pressed on, trusting the wolf as his guide. Finally, the trees began to thin, and the sounds of the 
+pursuing pack faded away.
+
+Coming out from the dense forest, Prince found himself on the outskirts of tooti-frooti. The wolf paused, turning to give him a final gaze before disappearing back into
+the shadows of the forest. Thankful for the guidance, Prince took a deep breath, thankful for the unlikely alliance that had helped him navigate the treacherous
+depths of tooti-frooti.
+-->
