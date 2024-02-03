@@ -1,16 +1,28 @@
 Program 1  
 1)	Assignment 1: - Solve following basic JavaScript exercises. All are basic exercises to familiarise your syntax and basic function. 
+
 Write a JavaScript program to display the current day and time in the following format
+
 2	Write a JavaScript program to get the current date
+
 3	Write a JavaScript program to find the area of a triangle
+
 4	Write a JavaScript program to calculate days left until next Christmas
+
 5	Write a JavaScript program to get the extension of a filename
+
 6	Write a JavaScript program to compare two objects
+
 7	Write a JavaScript program to convert an array of objects into CSV string
+
 8	Write a JavaScript program to convert a number to array of digits
+
 9	Write a JavaScript program to capitalize first letter of a string
+
 10	Write a JavaScript program to determine if a variable is array
+
 11	Write a JavaScript program to clone an array
+
 12	Write a JavaScript program to reverse a string. 
 
 2) Assignment 2: - DOM manipulation
